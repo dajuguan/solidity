@@ -168,7 +168,7 @@ func main() {
 	fmt.Printf("tx isPending: %t\n", isPending)
 	ParseTransactionBaseInfo(tx)
 	proxiedContractAddr := "0x4146df64d83acb0dcb0c1a4884a16f090165e122"
-	contractABI := GetContractABI(proxyContractAddr, etherscanAPIKEY)
+	contractABI := GetContractABI(proxiedContractAddr, etherscanAPIKEY)
 	DecodeTransactionInputData(contractABI, tx.Data())
 	receipt := GetTransactionReceipt(client, txHash)
 	DecodeTransactionLogs(receipt, contractABI)
